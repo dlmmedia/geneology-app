@@ -65,7 +65,8 @@ ENV PHP_OPCACHE_ENABLE=1
 
 # Copy the rest of the application
 COPY --chown=www-data:www-data . /var/www/html
-COPY --chown=www-data:www-data --chmod=755 .docker/etc/entrypoint.d /etc/entrypoint.d
+# Create entrypoint directory (entrypoint scripts are optional)
+RUN mkdir -p /etc/entrypoint.d || true
 
 
 RUN rm -rf tests/
