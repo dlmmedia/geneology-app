@@ -71,4 +71,14 @@ RUN mkdir -p /etc/entrypoint.d || true
 
 RUN rm -rf tests/
 
+# Install Node.js and npm for building assets
+USER root
+RUN apt-get update && apt-get install -y nodejs npm && rm -rf /var/lib/apt/lists/*
+
+USER www-data
+
+# Install npm dependencies and build assets
+RUN npm install && npm run build
+
+# Install Composer dependencies
 RUN composer install --no-dev --optimize-autoloader --no-scripts
