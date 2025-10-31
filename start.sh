@@ -7,10 +7,9 @@ if [ -z "$PORT_INT" ]; then
     PORT_INT=8000
 fi
 
-# Clear all caches
+# Clear all caches (use file driver to avoid DB connection issues)
 echo "Clearing caches..."
 php artisan config:clear || true
-php artisan cache:clear || true
 php artisan route:clear || true
 php artisan view:clear || true
 
@@ -21,6 +20,10 @@ php artisan migrate --force || echo "Migration failed or already up to date"
 # Seed essential data (settings, etc.)
 echo "Seeding essential data..."
 php artisan db:seed --class=SettingSeeder --force || echo "Seeding failed or already seeded"
+
+# Clear cache after DB is ready
+echo "Clearing cache after DB setup..."
+php artisan cache:clear || true
 
 # Create storage link if it doesn't exist
 echo "Creating storage link..."
