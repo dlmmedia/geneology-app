@@ -18,6 +18,10 @@ php artisan view:clear || true
 echo "Running database migrations..."
 php artisan migrate --force || echo "Migration failed or already up to date"
 
+# Seed essential data (settings, etc.)
+echo "Seeding essential data..."
+php artisan db:seed --class=SettingSeeder --force || echo "Seeding failed or already seeded"
+
 # Create storage link if it doesn't exist
 echo "Creating storage link..."
 php artisan storage:link || echo "Storage link already exists"
