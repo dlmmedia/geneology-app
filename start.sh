@@ -7,4 +7,14 @@ if [ -z "$PORT_INT" ]; then
     PORT_INT=8000
 fi
 
+# Run database migrations
+echo "Running database migrations..."
+php artisan migrate --force || echo "Migration failed or already up to date"
+
+# Create storage link if it doesn't exist
+echo "Creating storage link..."
+php artisan storage:link || echo "Storage link already exists"
+
+# Start Laravel server
+echo "Starting Laravel server on port $PORT_INT..."
 exec php artisan serve --host=0.0.0.0 --port=$PORT_INT
