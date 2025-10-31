@@ -32,10 +32,15 @@ final class FortifyServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Fortify::createUsersUsing(CreateNewUser::class);
+        // Disable user creation - using developer auto-login
+        // Fortify::createUsersUsing(CreateNewUser::class);
         Fortify::updateUserProfileInformationUsing(UpdateUserProfileInformation::class);
         Fortify::updateUserPasswordsUsing(UpdateUserPassword::class);
-        Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+        // Disable password reset - using developer auto-login
+        // Fortify::resetUserPasswordsUsing(ResetUserPassword::class);
+
+        // Note: Login/Register routes are still available but won't be used
+        // since we're using auto-login middleware. The routes are handled by Jetstream.
 
         RateLimiter::for('login', function (Request $request) {
             $throttleKey = Str::transliterate(Str::lower($request->input(Fortify::username())) . '|' . $request->ip());

@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="Genealogy Application - Manage your family tree and discover your ancestry.">
+    <meta name="description" content="DLM genealogy - Manage your family tree and discover your ancestry.">
 
-    <title>{{ config('app.name', 'Genealogy') }} @yield('title')</title>
+    <title>{{ config('app.name', 'DLM genealogy') }} @yield('title')</title>
 
     <!-- favicon -->
     <link rel="icon" type="image/png" href="{{ asset('img/favicon/favicon-16x16.png') }}" sizes="16x16">

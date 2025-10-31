@@ -1,32 +1,7 @@
 <footer class="text-center print:hidden text-neutral-600 dark:text-neutral-200 lg:text-left">
     <!-- Top Section: Social Media Links -->
     <div class="flex items-center justify-center p-2 border-b-2 border-neutral-200 dark:border-neutral-500 lg:justify-between bg-neutral-200 dark:bg-neutral-700">
-        <!-- Social Media Header (Visible on Large Screens) -->
-        <div class="hidden mr-12 lg:block">
-            <span>{{ __('app.connected_social') }}:</span>
-        </div>
-
-        <!-- Social Media Icons -->
-        <div class="flex justify-center">
-            <a href="https://www.facebook.com/" class="mr-6" target="_blank" aria-label="Visit Facebook" title="Facebook">
-                <x-ts-icon icon="tabler.brand-facebook" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-            <a href="https://twitter.com/Kreaweb_be" class="mr-6" target="_blank" aria-label="Visit X (formerly Twitter)" title="X">
-                <x-ts-icon icon="tabler.brand-x" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-            <a href="https://www.instagram.com/" class="mr-6" target="_blank" aria-label="Visit Instagram" title="Instagram">
-                <x-ts-icon icon="tabler.brand-instagram" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-            <a href="https://www.linkedin.com/" class="mr-6" target="_blank" aria-label="Visit LinkedIn" title="LinkedIn">
-                <x-ts-icon icon="tabler.brand-linkedin" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-            <a href="https://www.youtube.com/channel/UClUVszEUeb-nY7qM00ERCHg" class="mr-6" target="_blank" aria-label="Visit YouTube" title="YouTube">
-                <x-ts-icon icon="tabler.brand-youtube" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-            <a href="https://github.com/MGeurts" class="" target="_blank" aria-label="Visit GitHub" title="GitHub">
-                <x-ts-icon icon="tabler.brand-github" class="text-neutral-900 dark:text-neutral-200" />
-            </a>
-        </div>
+        <!-- Social media section removed -->
     </div>
 
     <!-- Middle Section: Main Content -->
@@ -35,7 +10,7 @@
             <!-- Logo Section -->
             <div class="flex justify-center md:justify-start">
                 <a href="{{ route('home') }}" aria-label="Go to Home" title="Home">
-                    <x-svg.genealogy class="size-48 fill-dark dark:fill-neutral-400 hover:fill-primary-300 dark:hover:fill-primary-300" alt="Genealogy Logo" />
+                    <x-svg.genealogy class="size-48 fill-dark dark:fill-neutral-400 hover:fill-primary-300 dark:hover:fill-primary-300" alt="DLM genealogy Logo" />
                 </a>
             </div>
 

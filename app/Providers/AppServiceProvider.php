@@ -227,9 +227,8 @@ final class AppServiceProvider extends ServiceProvider
     private function addAboutCommandDetails(): void
     {
         AboutCommand::add('Application', [
-            'Name'    => 'Genealogy',
-            'Author'  => 'kreaweb.be',
-            'GitHub'  => 'https://github.com/MGeurts/genealogy',
+            'Name'    => 'DLM genealogy',
+            'Author'  => 'DLM',
             'License' => 'MIT License',
         ]);
     }

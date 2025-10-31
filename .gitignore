@@ -26,3 +26,12 @@ _ide_helper_models.php
 devbox.d/*
 devbox.json
 devbox.lock
+
+# Temporary photo files
+storage/app/temp-photos/*
+!storage/app/temp-photos/.gitkeep
+
+# Photo fix documentation (keep in repo)
+# PHOTO_FIX_README.md
+# QUICK_FIX.md
+# FIX_PHOTOS_NOW.txt

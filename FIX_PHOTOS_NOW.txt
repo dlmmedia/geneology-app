@@ -1,0 +1,11 @@
+=== IMMEDIATE FIX FOR BROKEN PHOTOS ===
+
+Run this command to fix all photo references:
+
+    php artisan photos:update-refs --team="BRITISH ROYALS"
+
+This updates the database to match existing photo files.
+
+If PHP is not in PATH, use the full path to PHP.
+
+After running, refresh your browser - photos should appear!

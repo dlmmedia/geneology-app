@@ -14,9 +14,7 @@
             <br />
             <p>
                 {{ __('gedcom.team_gedcom_reference') }} :
-                <x-link href="https://gedcom.io/specs/" target="_blank" title="{{ __('gedcom.team_gedcom_specifications') }}">
-                    <x-svg.gedcom class="size-36 dark:fill-white hover:fill-primary-300 dark:hover:fill-primary-300" alt="gedcom" />
-                </x-link>
+                <x-svg.gedcom class="size-36 dark:fill-white hover:fill-primary-300 dark:hover:fill-primary-300" alt="gedcom" />
             </p>
         </div>
 
@@ -24,9 +22,6 @@
             <x-slot:title>
                 {{ __('gedcom.before_import') }} ...
             </x-slot:title>
-
-            {{ __('gedcom.validate') }} :
-            <x-ts-link class="text-white text-lg" href="https://ged-inline.org/" target="_blank" />
         </x-ts-alert>
 
         <x-under-construction />

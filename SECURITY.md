@@ -14,11 +14,7 @@ Please update to the most recent release to ensure you receive the latest securi
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability, please **do not** create a public GitHub issue.  
-Instead, report it privately via one of the following methods:
-
--   **GitHub Security Advisories** (preferred): [Open a new draft advisory](../../security/advisories/new)
--   **Email**: bin@kreaweb.be
+If you discover a security vulnerability, please report it privately.
 
 When reporting, please include:
 
@@ -35,18 +31,14 @@ When reporting, please include:
 1. We will acknowledge receipt of your report within **3 working days**.
 2. We will work on verifying and reproducing the vulnerability.
 3. We will aim to release a patch within **14 working days** of verification (complex cases may take longer).
-4. Once fixed, we will publish a GitHub Security Advisory and, if applicable, request a CVE ID.
+4. Once fixed, we will publish security information.
 5. We will credit the reporter publicly (unless you request otherwise).
 
 ---
 
 ## Credit and Recognition
 
-We value responsible disclosure and will credit all verified security researchers in:
-
--   The GitHub Security Advisory.
--   This repository’s `SECURITY.md` acknowledgements section.
--   CVE records (if a CVE is issued).
+We value responsible disclosure and will credit all verified security researchers.
 
 ---
 
@@ -62,7 +54,7 @@ We thank the following security researchers for their responsible disclosure and
 
 This section lists previously disclosed vulnerabilities, their impact, and who reported them.
 
-| Advisory ID / CVE     | Description                                       | Affected Versions | Patched Version | Reported By               | Advisory Link                                         |
-| --------------------- | ------------------------------------------------- | ----------------- | --------------- | ------------------------- | ----------------------------------------------------- |
-| `GHSA-3h8x-g9xj-rhwg` | Reflected XSS Vulnerability                       | < `v4.4.0`        | `v4.4.0`        | Adrian (@eternalvalhalla) | [View](../../security/advisories/GHSA-3h8x-g9xj-rhwg) |
-| `GHSA-j457-9m86-6q5r` | Stored XSS vulnerability in Genealogy application | < `v4.4.0`        | `v4.4.0`        | Adrian (@eternalvalhalla) | [View](../../security/advisories/GHSA-j457-9m86-6q5r) |
+| Advisory ID / CVE     | Description                                       | Affected Versions | Patched Version | Reported By               |
+| --------------------- | ------------------------------------------------- | ----------------- | --------------- | ------------------------- |
+| `GHSA-3h8x-g9xj-rhwg` | Reflected XSS Vulnerability                       | < `v4.4.0`        | `v4.4.0`        | Adrian (@eternalvalhalla) |
+| `GHSA-j457-9m86-6q5r` | Stored XSS vulnerability in Genealogy application | < `v4.4.0`        | `v4.4.0`        | Adrian (@eternalvalhalla) |

@@ -1,15 +1,11 @@
 ## Willkommen ...
 
-**Genealogy** ist eine kostenlose und Open-Source-Anwendung zur Erstellung von Familienstammbäumen, um Familienmitglieder und ihre Beziehungen zu dokumentieren.
+**DLM genealogy** ist eine Anwendung zur Erstellung von Familienstammbäumen, um Familienmitglieder und ihre Beziehungen zu dokumentieren.
 
-<img src="img/help/genealogy-000a.webp" class="rounded" alt="Genealogy-000a">
-<img src="img/help/genealogy-020a.webp" class="rounded" alt="Genealogy-020a">
+<img src="img/help/genealogy-000a.webp" class="rounded" alt="DLM genealogy-000a">
+<img src="img/help/genealogy-020a.webp" class="rounded" alt="DLM genealogy-020a">
 
-## Demo
-
-<a href="https://genealogy.kreaweb.be/" target="_blank">https://genealogy.kreaweb.be/</a>
-
-Diese Demo enthält 2 implementierte Familienstammbäume: **BRITISCH ROYALS** und **KENNEDY**.
+Diese Anwendung enthält 2 implementierte Familienstammbäume: **BRITISCH ROYALS** und **KENNEDY**.
 
 <table>
     <thead>
@@ -46,6 +42,3 @@ Diese Demo enthält 2 implementierte Familienstammbäume: **BRITISCH ROYALS** un
     </tbody>
 </table>
 
-## Github-Repository
-
-<a href="https://github.com/MGeurts/genealogy/" target="_blank">https://github.com/MGeurts/genealogy</a>

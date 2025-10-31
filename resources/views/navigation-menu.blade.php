@@ -1,24 +1,25 @@
-<nav x-data="{ open: false }" class="border-b border-gray-100 bg-neutral-200 dark:bg-neutral-700 text-neutral-600 dark:text-neutral-200">
+<nav x-data="{ open: false }" class="sticky top-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
     @php $user = auth()->user(); @endphp
 
     {{-- primary navigation menu --}}
-    <div class="flex gap-5 px-2 min-h-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex gap-5 min-h-16 items-center">
         <div class="flex grow gap-5">
             {{-- logo --}}
             <div class="flex items-center shrink-0">
-                <a href="{{ route('home') }}" title="{{ __('app.home') }}">
-                    <x-svg.genealogy class="size-12 fill-dark dark:fill-neutral-400 hover:fill-primary-300 dark:hover:fill-primary-300" alt="genealogy" />
+                <a href="{{ route('people.search') }}" title="{{ __('app.home') }}" class="flex items-center space-x-3">
+                    <x-svg.genealogy class="size-10 fill-blue-600 dark:fill-blue-400" alt="genealogy" />
+                    <span class="text-2xl font-bold text-gray-900 dark:text-white hidden md:inline">DLM Genealogy</span>
                 </a>
             </div>
 
             {{-- navigation links --}}
             <div class="flex flex-wrap gap-5 py-2">
                 <div class="flex items-center gap-5">
-                    <x-nav-link href="{{ route('home') }}" :active="request()->routeIs('home')">
+                    <x-nav-link href="{{ route('landing') }}" :active="request()->routeIs('landing')">
                         <x-ts-icon icon="tabler.home" class="inline-block size-5 mr-1" />
-                        {{ __('app.home') }}
+                        Home
                     </x-nav-link>
-
                     <x-nav-link href="{{ route('people.search') }}" :active="request()->routeIs('people.search')">
                         <x-ts-icon icon="tabler.search" class="inline-block size-5 mr-1" />
                         {{ __('app.search') }}
@@ -165,16 +166,7 @@
                     </div>
                 @endif
             @else
-                <x-nav-link href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    <x-ts-icon icon="tabler.login-2" class="inline-block size-5 mr-1" />
-                    {{ __('auth.login') }}
-                </x-nav-link>
-
-                <x-nav-link href="{{ route('register') }}" :active="request()->routeIs('register')">
-                    <x-ts-icon icon="tabler.user-plus" class="inline-block size-5 mr-1" />
-                    {{ __('auth.register') }}
-                </x-nav-link>
-
+                {{-- Login/Register disabled - using auto-login --}}
                 <x-set.language />
             @endauth
         </div>
@@ -199,16 +191,16 @@
                 </svg>
             </button>
         </div>
+        </div>
     </div>
 
     {{-- responsive navigation menu --}}
     <div :class="{ 'block': open, 'hidden': !open }" class="hidden md:hidden">
         <div class="space-y-1 border-t border-gray-200">
-            <x-nav-link-responsive href="{{ route('home') }}" :active="request()->routeIs('home')">
+            <x-nav-link-responsive href="{{ route('landing') }}" :active="request()->routeIs('landing')">
                 <x-ts-icon icon="tabler.home" class="inline-block size-5 mr-1" />
-                {{ __('app.home') }}
+                Home
             </x-nav-link-responsive>
-
             <x-nav-link-responsive href="{{ route('people.search') }}" :active="request()->routeIs('people.search')">
                 <x-ts-icon icon="tabler.search" class="inline-block size-5 mr-1" />
                 {{ __('app.search') }}
@@ -226,18 +218,7 @@
         </div>
 
         @guest
-            <div class="space-y-1 border-t border-gray-200">
-                <x-nav-link-responsive href="{{ route('login') }}" :active="request()->routeIs('login')">
-                    <x-ts-icon icon="tabler.login-2" class="inline-block size-5 mr-1" />
-                    {{ __('auth.login') }}
-                </x-nav-link-responsive>
-
-                <x-nav-link-responsive href="{{ route('register') }}" :active="request()->routeIs('register')">
-                    <x-ts-icon icon="tabler.user-plus" class="inline-block size-5 mr-1" />
-                    {{ __('auth.register') }}
-                </x-nav-link-responsive>
-            </div>
-
+            {{-- Login/Register disabled - using auto-login --}}
             {{-- responsive settings options --}}
             <div class="pt-2 pb-2 pl-4 border-t border-gray-200">
                 <x-set.language />

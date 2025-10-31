@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Genealogy'),
+    'name' => env('APP_NAME', 'DLM genealogy'),
 
     /*
     |--------------------------------------------------------------------------

@@ -1,15 +1,11 @@
 ## Welcome ...
 
-**Genealogy** is a free and open-source family tree application to record family members and their relationships.
+**DLM genealogy** is a family tree application to record family members and their relationships.
 
-<img src="img/help/genealogy-000a.webp" class="rounded" alt="Genealogy-000a">
-<img src="img/help/genealogy-020a.webp" class="rounded" alt="Genealogy-020a">
+<img src="img/help/genealogy-000a.webp" class="rounded" alt="DLM genealogy-000a">
+<img src="img/help/genealogy-020a.webp" class="rounded" alt="DLM genealogy-020a">
 
-## Demo
-
-<a href="https://genealogy.kreaweb.be/" target="_blank">https://genealogy.kreaweb.be/</a>
-
-This demo has 2 family trees implemented, **BRITISH ROYALS** and **KENNEDY**.
+This application has 2 family trees implemented, **BRITISH ROYALS** and **KENNEDY**.
 
 <table>
     <thead>
@@ -46,6 +42,3 @@ This demo has 2 family trees implemented, **BRITISH ROYALS** and **KENNEDY**.
     </tbody>
 </table>
 
-## Github Repository
-
-<a href="https://github.com/MGeurts/genealogy/" target="_blank">https://github.com/MGeurts/genealogy</a>

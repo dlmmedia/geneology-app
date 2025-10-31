@@ -5,23 +5,53 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 
 // -----------------------------------------------------------------------------------
-// frontend routes
+// Landing page route (public)
 // -----------------------------------------------------------------------------------
-Route::controller(App\Http\Controllers\Front\PageController::class)->group(function (): void {
-    Route::get('/', 'home')->name('home');
-    Route::get('password-generator', 'passwordGenerator')->name('password.generator');
-    Route::get('about', 'about')->name('about');
-    Route::get('help', 'help')->name('help');
-});
+Route::get('/', [App\Http\Controllers\Front\PageController::class, 'landing'])->name('landing');
 
 // -----------------------------------------------------------------------------------
-// backend routes
+// Launch app route - auto-login and redirect to app
+// -----------------------------------------------------------------------------------
+Route::post('/launch', function () {
+    // Auto-login as developer
+    $developer = \App\Models\User::where('email', 'developer@genealogy.test')
+        ->where('is_developer', true)
+        ->first();
+
+    if ($developer) {
+        auth()->login($developer, true);
+        return redirect()->route('people.search');
+    }
+
+    return redirect()->route('landing')->with('error', 'Developer account not found.');
+})->name('launch');
+
+// -----------------------------------------------------------------------------------
+// Logout override - redirect to landing page
+// -----------------------------------------------------------------------------------
+Route::post('/logout', function () {
+    auth()->logout();
+    request()->session()->invalidate();
+    request()->session()->regenerateToken();
+    return redirect()->route('landing');
+})->name('logout');
+
+// -----------------------------------------------------------------------------------
+// App routes - require authentication with auto-login fallback
 // -----------------------------------------------------------------------------------
 Route::middleware([
+    App\Http\Middleware\AutoLoginDeveloper::class,
     'auth:sanctum',
     config('jetstream.auth_session'),
-    'verified',
+    // 'verified', // Removed - using developer auto-login
 ])->group(function (): void {
+    // App home (redirects from old home)
+    Route::controller(App\Http\Controllers\Front\PageController::class)->group(function (): void {
+        Route::get('/home', 'home')->name('home');
+        Route::get('password-generator', 'passwordGenerator')->name('password.generator');
+        Route::get('about', 'about')->name('about');
+        Route::get('help', 'help')->name('help');
+    });
     // -----------------------------------------------------------------------------------
     // teams
     // -----------------------------------------------------------------------------------

@@ -75,7 +75,7 @@ return [
     |
     */
 
-    'home' => '/search',
+    'home' => '/search', // App home - landing page is at /
 
     /*
     |--------------------------------------------------------------------------
@@ -146,16 +146,20 @@ return [
     */
 
     'features' => [
-        Features::registration(),
-        Features::resetPasswords(),
-        Features::emailVerification(),
+        // Registration disabled - using developer auto-login
+        // Features::registration(),
+        // Reset passwords disabled
+        // Features::resetPasswords(),
+        // Email verification disabled
+        // Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
-        Features::twoFactorAuthentication([
-            'confirm'         => true,
-            'confirmPassword' => true,
-            // 'window' => 0,
-        ]),
+        // Two-factor authentication disabled
+        // Features::twoFactorAuthentication([
+        //     'confirm'         => true,
+        //     'confirmPassword' => true,
+        //     // 'window' => 0,
+        // ]),
     ],
 
 ];

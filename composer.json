@@ -1,7 +1,7 @@
 {
-    "name": "mgeurts/genealogy",
+    "name": "dlm/genealogy",
     "type": "project",
-    "description": "A free and open-source family tree application to record family members and their relationships.",
+    "description": "A family tree application to record family members and their relationships.",
     "keywords": [
       "php",
       "laravel",
@@ -14,21 +14,13 @@
       "gedcom",
       "lineage",
       "pedigree",
-      "open-source",
       "family-history",
       "laravel-application"
     ],
-    "homepage": "https://github.com/MGeurts/genealogy",
-    "support": {
-      "source": "https://github.com/MGeurts/genealogy",
-      "demo": "https://genealogy.kreaweb.be",
-      "docs": "https://genealogy.kreaweb.be/help"
-    },
     "license": "MIT",
     "authors": [
         {
-            "name": "Marc Geurts",
-            "email": "info@kreaweb.be",
+            "name": "DLM",
             "role": "Developer"
         }
     ],

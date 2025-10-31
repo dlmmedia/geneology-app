@@ -12,6 +12,11 @@ use Laravel\Jetstream\Jetstream;
 
 final class PageController extends Controller
 {
+    public function landing(): View
+    {
+        return view('landing');
+    }
+
     public function home(): View
     {
         $homeFile = Jetstream::localizedMarkdownPath(app()->getLocale() . '/' . 'home.md');

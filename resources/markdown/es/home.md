@@ -1,15 +1,11 @@
 ## Bienvenido ...
 
-**Genealogy** es una aplicación gratuita y de código abierto para registrar miembros de la familia y sus relaciones.
+**DLM genealogy** es una aplicación para registrar miembros de la familia y sus relaciones.
 
-<img src="img/help/genealogy-000a.webp" class="rounded" alt="Genealogy-000a">
-<img src="img/help/genealogy-020a.webp" class="rounded" alt="Genealogy-020a">
+<img src="img/help/genealogy-000a.webp" class="rounded" alt="DLM genealogy-000a">
+<img src="img/help/genealogy-020a.webp" class="rounded" alt="DLM genealogy-020a">
 
-## Demo
-
-<a href="https://genealogy.kreaweb.be/" target="_blank">https://genealogy.kreaweb.be/</a>
-
-Esta demo tiene implementados 2 árboles genealógicos: **BRITISH ROYALS** y **KENNEDY**.
+Esta aplicación tiene implementados 2 árboles genealógicos: **BRITISH ROYALS** y **KENNEDY**.
 
 <table>
     <thead>
@@ -46,6 +42,3 @@ Esta demo tiene implementados 2 árboles genealógicos: **BRITISH ROYALS** y **K
     </tbody>
 </table>
 
-## Repositorio de Github
-
-<a href="https://github.com/MGeurts/genealogy/" target="_blank">https://github.com/MGeurts/genealogy</a>
