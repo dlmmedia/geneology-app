@@ -7,6 +7,13 @@ if [ -z "$PORT_INT" ]; then
     PORT_INT=8000
 fi
 
+# Clear all caches
+echo "Clearing caches..."
+php artisan config:clear || true
+php artisan cache:clear || true
+php artisan route:clear || true
+php artisan view:clear || true
+
 # Run database migrations
 echo "Running database migrations..."
 php artisan migrate --force || echo "Migration failed or already up to date"
