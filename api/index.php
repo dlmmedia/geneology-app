@@ -5,14 +5,7 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 try {
-    require __DIR__ . '/../vendor/autoload.php';
-    
-    // Define LARAVEL_START if not defined
-    if (!defined('LARAVEL_START')) {
-        define('LARAVEL_START', microtime(true));
-    }
-    
-    // Configure storage for Vercel BEFORE bootstrapping (read-only filesystem)
+    // Configure storage for Vercel BEFORE anything else (read-only filesystem)
     $storagePath = '/tmp/storage';
     
     // Ensure the storage directories exist BEFORE bootstrap
@@ -36,18 +29,11 @@ try {
         }
     }
     
-    // Set environment variable for view compiled path
-    if (!getenv('VIEW_COMPILED_PATH')) {
-        putenv('VIEW_COMPILED_PATH=' . $storagePath . '/framework/views');
-        $_ENV['VIEW_COMPILED_PATH'] = $storagePath . '/framework/views';
-        $_SERVER['VIEW_COMPILED_PATH'] = $storagePath . '/framework/views';
-    }
+    require __DIR__ . '/../vendor/autoload.php';
     
-    // Set VERCEL environment variable so bootstrap/app.php can detect it
-    if (!isset($_ENV['VERCEL'])) {
-        $_ENV['VERCEL'] = '1';
-        $_SERVER['VERCEL'] = '1';
-        putenv('VERCEL=1');
+    // Define LARAVEL_START if not defined
+    if (!defined('LARAVEL_START')) {
+        define('LARAVEL_START', microtime(true));
     }
     
     // Determine if the application is in maintenance mode...
@@ -57,6 +43,12 @@ try {
     
     // Bootstrap Laravel and handle the request...
     $app = require_once __DIR__ . '/../bootstrap/app.php';
+    
+    // Set the storage path immediately after bootstrap
+    $app->useStoragePath($storagePath);
+    
+    // Bind the storage path into the container
+    $app->instance('path.storage', $storagePath);
     
     $app->handleRequest(Illuminate\Http\Request::capture());
     
