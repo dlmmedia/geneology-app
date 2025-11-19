@@ -12,8 +12,8 @@ try {
         define('LARAVEL_START', microtime(true));
     }
     
-    // Configure storage for Vercel serverless environment
-    $storagePath = require __DIR__ . '/../bootstrap/vercel.php';
+    // Configure storage for Vercel serverless environment (creates dirs & sets env vars)
+    require __DIR__ . '/../bootstrap/vercel.php';
     
     // Determine if the application is in maintenance mode...
     if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
@@ -22,9 +22,6 @@ try {
     
     // Bootstrap Laravel and handle the request...
     $app = require_once __DIR__ . '/../bootstrap/app.php';
-    
-    // Set the storage path on the application
-    $app->useStoragePath($storagePath);
     
     $app->handleRequest(Illuminate\Http\Request::capture());
     

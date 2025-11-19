@@ -6,10 +6,17 @@ use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
 
-// Set storage path before creating the application
-$storagePath = '/tmp/storage';
+// Get storage path from environment variable (set in bootstrap/vercel.php)
+$storagePath = $_ENV['LARAVEL_STORAGE_PATH'] ?? null;
 
-$app = Application::configure(basePath: dirname(__DIR__))
+$config = Application::configure(basePath: dirname(__DIR__));
+
+// Set storage path if defined (for Vercel serverless)
+if ($storagePath) {
+    $config->useStoragePath($storagePath);
+}
+
+return $config
     ->withRouting(
         web: __DIR__ . '/../routes/web.php',
         api: __DIR__ . '/../routes/api.php',
@@ -29,9 +36,5 @@ $app = Application::configure(basePath: dirname(__DIR__))
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         //
-    });
-
-// Set storage path before creating the app
-$app->useStoragePath($storagePath);
-
-return $app->create();
+    })
+    ->create();
