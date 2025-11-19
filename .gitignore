@@ -35,3 +35,4 @@ storage/app/temp-photos/*
 # PHOTO_FIX_README.md
 # QUICK_FIX.md
 # FIX_PHOTOS_NOW.txt
+.vercel

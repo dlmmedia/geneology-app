@@ -2,7 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
+        "build": "if [ -x \"$(command -v composer)\" ]; then composer install --no-dev --no-interaction --prefer-dist; fi && vite build",
         "dev": "vite"
     },
     "devDependencies": {

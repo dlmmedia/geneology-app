@@ -26,6 +26,7 @@
     ],
     "require": {
         "php": "^8.3",
+        "ext-pgsql": "*",
         "filament/tables": "^4.0",
         "intervention/image": "^3.11",
         "korridor/laravel-has-many-merged": "^1.2",

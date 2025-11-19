@@ -1,0 +1,4 @@
+tests/**
+storage/**
+!storage/app/public/**
+
