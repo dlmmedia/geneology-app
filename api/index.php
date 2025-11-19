@@ -44,12 +44,6 @@ try {
     // Bootstrap Laravel and handle the request...
     $app = require_once __DIR__ . '/../bootstrap/app.php';
     
-    // Set the storage path immediately after bootstrap
-    $app->useStoragePath($storagePath);
-    
-    // Bind the storage path into the container
-    $app->instance('path.storage', $storagePath);
-    
     $app->handleRequest(Illuminate\Http\Request::capture());
     
 } catch (Throwable $e) {
