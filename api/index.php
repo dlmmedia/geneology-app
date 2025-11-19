@@ -36,6 +36,20 @@ try {
         }
     }
     
+    // Set environment variable for view compiled path
+    if (!getenv('VIEW_COMPILED_PATH')) {
+        putenv('VIEW_COMPILED_PATH=' . $storagePath . '/framework/views');
+        $_ENV['VIEW_COMPILED_PATH'] = $storagePath . '/framework/views';
+        $_SERVER['VIEW_COMPILED_PATH'] = $storagePath . '/framework/views';
+    }
+    
+    // Set VERCEL environment variable so bootstrap/app.php can detect it
+    if (!isset($_ENV['VERCEL'])) {
+        $_ENV['VERCEL'] = '1';
+        $_SERVER['VERCEL'] = '1';
+        putenv('VERCEL=1');
+    }
+    
     // Determine if the application is in maintenance mode...
     if (file_exists($maintenance = __DIR__ . '/../storage/framework/maintenance.php')) {
         require $maintenance;
@@ -43,9 +57,6 @@ try {
     
     // Bootstrap Laravel and handle the request...
     $app = require_once __DIR__ . '/../bootstrap/app.php';
-    
-    // Set the storage path
-    $app->useStoragePath($storagePath);
     
     $app->handleRequest(Illuminate\Http\Request::capture());
     
