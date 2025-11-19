@@ -2,7 +2,8 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "if [ -x \"$(command -v composer)\" ]; then composer install --no-dev --no-interaction --prefer-dist; fi && vite build",
+        "build": "vite build",
+        "vercel-build": "composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && npm run build",
         "dev": "vite"
     },
     "devDependencies": {
