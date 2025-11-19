@@ -1,0 +1,16 @@
+APP_NAME=Genealogy
+APP_ENV=production
+APP_KEY=base64:VOX8tpXLzo0q9GC8bZR+ug60rfHtsahEHlt6qQ6JNwE=
+APP_DEBUG=false
+APP_URL=https://genealogy-app-v2.vercel.app
+APP_LOCALE=en
+LOG_CHANNEL=stderr
+LOG_LEVEL=error
+DB_CONNECTION=sqlite
+DB_DATABASE=/tmp/database.sqlite
+SESSION_DRIVER=cookie
+CACHE_STORE=array
+QUEUE_CONNECTION=sync
+FILESYSTEM_DISK=local
+MAIL_MAILER=log
+MAIL_FROM_ADDRESS=noreply@genealogy.app
