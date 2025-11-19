@@ -1,8 +1,8 @@
 {
     "version": 2,
     "outputDirectory": "public",
-    "installCommand": "composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && npm install",
-    "buildCommand": "npm run build",
+    "buildCommand": "echo 'No build needed - assets pre-built'",
+    "installCommand": "echo 'No install needed'",
     "functions": {
         "api/index.php": { "runtime": "vercel-php@0.7.2" }
     },

@@ -2,8 +2,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "vite build",
-        "vercel-build": "composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader && npm run build",
+        "build": "echo 'Build step skipped - assets pre-built'",
         "dev": "vite"
     },
     "devDependencies": {
